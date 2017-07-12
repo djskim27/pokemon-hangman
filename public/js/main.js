@@ -1,7 +1,7 @@
 $(function(){
 //words
     //words array
-    var words = ['Richard', 'David', 'Susie', 'Jace'];
+    var words = ['pikachu', 'charmander', 'bulbasaur', 'apple'];
     //take random word from array and split it
     var randomNumber = Math.floor(words.length * Math.random());
     var lettersInPlay = words[randomNumber].split('');
@@ -15,7 +15,7 @@ $(function(){
         
     
     }
-    
+    //Display array of spaces into word-lines
     var $wordDiv = $('#word-lines');
     $wordDiv.append(arrayOfSpaces);
     //create divs for each letter in word
@@ -34,10 +34,24 @@ var letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
 for(var i=0; i<letters.length; i++) {
 var $keyboard = $('#keyboard')
 //var button = $('<div>').addClass('btn').html(letter[i]);
-$keyboard.append('<div class="btn btn-success">'+letters[i]+'</div>');
+$keyboard.append('<div class="btn btn-info">'+letters[i]+'</div>');
 }
 
+var letterClicked = "a"
 
+//Check to see if letter is in linespace
+function letterMatch() {
+//if letter clicked equals one of the letters in linespace
+for (var i=0; i<lettersInPlay.length; i++)
+if (letterClicked === lettersInPlay[i]){
+    arrayOfSpaces[i] = letterClicked;
+}
+    // display letter in corresponding linespace
 
+    //letter button turns green
 
+console.log(arrayOfSpaces);
+$wordDiv.text(arrayOfSpaces.join(' '));
+}
 });
+
