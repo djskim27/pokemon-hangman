@@ -5,7 +5,8 @@ loadKeyboard();
     var words = ['squirtle', 'charmander', 'bulbasaur', 'pikachu', 'machop', 'charizard', 'venusaur', 'jigglypuff'];
     //take random word from array and split it
     var randomNumber = Math.floor(words.length * Math.random());
-    var lettersInPlay = words[randomNumber].toUpperCase().split('');
+    var randomWord = words[randomNumber];
+    var lettersInPlay = randomWord.toUpperCase().split('');
     //linespaces
     //array of spaces
     var arrayOfSpaces =[];
@@ -40,6 +41,9 @@ $keyboard.append('<div class="btn btn-outline-success keys" id="letter-div">'+le
 }
 }
 
+//Number of Attempts
+
+
 var letterClicked;
 
 //Check to see if letter is in linespace
@@ -51,29 +55,55 @@ if (letterClicked === lettersInPlay[i]){
     // display letter in corresponding linespace
     $wordDiv.text(arrayOfSpaces.join(' '));
     //letter button turns green and is disabled
-    $(button).remove();
-    
-} else {
-    //incorrect letter turns button red and disabled 
-    $(button).removeClass('btn-outline-success');
-    $(button).addClass('btn-danger disabled');
+    turnKeyGreen();
+    //check for word is complete/correct
+    correctWord();
+ 
     
     
-    
+ 
+    // if letter is incorrect
+} else if (lettersInPlay.indexOf(letterClicked) === (-1)) {
+    // letter button turns red and is disabled
+    turnKeyRed();
+}
+   
+    }
 }
 
+//if word is completely correct; give an indicator of win and move to next word
+function correctWord() {
+       if ($wordDiv.text().replace(/ +/g, "") === randomWord.toUpperCase()) {
+        alert('you won!')
+            
     
+    } 
+            
+        
+    }
 
 
+
+
+
+//turns key green
+function turnKeyGreen() {
+    $(event.currentTarget).removeClass('btn-outline-success');
+    $(event.currentTarget).addClass('btn-success disabled');
 }
+//turns key red
+function turnKeyRed() {
+    $(event.currentTarget).removeClass('btn-outline-success');
+    $(event.currentTarget).addClass('btn-danger disabled');
 }
-
 
 //click eventlisteners
 //
 $('.keys').on('click', function(event){
 letterClicked = $(event.currentTarget).text();
 letterMatch(event.currentTarget);
+
+
 
 
 });
