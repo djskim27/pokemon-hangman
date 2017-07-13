@@ -1,18 +1,19 @@
 $(function(){
+loadKeyboard();
 //words
     //words array
-    var words = ['pikachu', 'charmander', 'bulbasaur', 'apple'];
+    var words = ['squirtle', 'charmander', 'bulbasaur', 'pikachu', 'machop', 'charizard', 'venusaur', 'jigglypuff'];
     //take random word from array and split it
     var randomNumber = Math.floor(words.length * Math.random());
-    var lettersInPlay = words[randomNumber].split('');
+    var lettersInPlay = words[randomNumber].toUpperCase().split('');
     //linespaces
     //array of spaces
     var arrayOfSpaces =[];
     //for every letter in my word, create a ___ to signify linespace
     for (var i =0; i<lettersInPlay.length; i++) {
         
-        arrayOfSpaces.push('____ ');
-        
+        arrayOfSpaces.push('_ ');
+    
     
     }
     //Display array of spaces into word-lines
@@ -30,28 +31,56 @@ $(function(){
 
 
 //keyboard
-var letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
+function loadKeyboard(){
+var letters = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
 for(var i=0; i<letters.length; i++) {
 var $keyboard = $('#keyboard')
 //var button = $('<div>').addClass('btn').html(letter[i]);
-$keyboard.append('<div class="btn btn-info">'+letters[i]+'</div>');
+$keyboard.append('<div class="btn btn-outline-success keys" id="letter-div">'+letters[i]+'</div>');
+}
 }
 
-var letterClicked = "a"
+var letterClicked;
 
 //Check to see if letter is in linespace
-function letterMatch() {
+function letterMatch(button) {
 //if letter clicked equals one of the letters in linespace
-for (var i=0; i<lettersInPlay.length; i++)
+for (var i=0; i<lettersInPlay.length; i++) {
 if (letterClicked === lettersInPlay[i]){
     arrayOfSpaces[i] = letterClicked;
-}
     // display letter in corresponding linespace
-
-    //letter button turns green
-
-console.log(arrayOfSpaces);
-$wordDiv.text(arrayOfSpaces.join(' '));
+    $wordDiv.text(arrayOfSpaces.join(' '));
+    //letter button turns green and is disabled
+    $(button).remove();
+    
+} else {
+    //incorrect letter turns button red and disabled 
+    $(button).removeClass('btn-outline-success');
+    $(button).addClass('btn-danger disabled');
+    
+    
+    
 }
+
+    
+
+
+}
+}
+
+
+//click eventlisteners
+//
+$('.keys').on('click', function(event){
+letterClicked = $(event.currentTarget).text();
+letterMatch(event.currentTarget);
+
+
 });
+
+
+
+});
+
+
 
