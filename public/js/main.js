@@ -1,5 +1,6 @@
 $(function(){
 loadKeyboard();
+
 const topTierVariables = {
     pokemon: ['squirtle', 'charmander', 'bulbasaur', 'pikachu', 'machop', 'charizard', 'venusaur', 'jigglypuff'],
     $wordDiv: $('#word-lines')
@@ -10,20 +11,27 @@ const topTierVariables = {
     
 
     var words = topTierVariables.pokemon;
+    var randomNumber = 0;
+    var randomWord = '';
+    var lettersInPlay = '';
+    var arrayOfSpaces=[];
+
+    
     //take random word from array and split it
     var randomNumber = Math.floor(words.length * Math.random());
+   
     var randomWord = words[randomNumber];
     
     var lettersInPlay = randomWord.toUpperCase().split('');
     
     //linespaces
     
-    //array of spaces
-    var arrayOfSpaces =[];
+    
   
     
     
     //for every letter in my word, create a ___ to signify linespace
+    
     for (var i =0; i<lettersInPlay.length; i++) {
         
         arrayOfSpaces.push('__ ');
@@ -40,6 +48,8 @@ const topTierVariables = {
    // var $wordDiv = $('#word-lines');
     //$wordDiv.append('<div id="letter-div" class="d-inline">'+lettersInPlay[i]+'</div>')
     //}
+    
+    
     
     
 
@@ -101,30 +111,44 @@ function correctWord() {
         alert('you won!')
         } 
 }
+
+
 //if user can't guess the word
 function userLoses() {
         if (numberOfAttempts === 0) {
             disableKeyboard();
             alert('The pokemon got away!');
+            resetGame();
         }
 
 }
-
-
-
+//reset Game
+function resetGame() {
+            topTierVariables.$wordDiv.empty();
+            arrayOfSpaces = [];
+            numberOfAttempts = 6;
+            
+            $('#attempts').html('Attempts Remaining: ' + numberOfAttempts);
+            
+            $('.keys').removeClass('btn-success btn-danger disabled');
+            $('.keys').removeClass('btn-danger');
+            $('.keys').removeClass('disabled');
+            $('.keys').addClass('btn-outline-success')
+           
+}
 
 
 //turns key green
 function turnKeyGreen() {
     $(event.currentTarget).removeClass('btn-outline-success');
-    $(event.currentTarget).addClass('btn-success disabled');
-    $(event.currentTarget).off('click');
+    $(event.currentTarget).addClass('btn-success');
+    //$(event.currentTarget).off('click');
 }
 //turns key red
 function turnKeyRed() {
     $(event.currentTarget).removeClass('btn-outline-success');
-    $(event.currentTarget).addClass('btn-danger disabled');
-    $(event.currentTarget).off('click');
+    $(event.currentTarget).addClass('btn-danger');
+    //$(event.currentTarget).off('click');
 }
 
 //disable keyboard
@@ -132,13 +156,17 @@ function disableKeyboard () {
     $('.keys').off('click');
 }
 
-//reveal word
+//reveal word after losing/winning
 function revealWord() {} {
-    
+
 }
+
+
 //click eventlisteners
 //
 $('.keys').on('click', function(event){
+$(event.currentTarget).off('click');
+$(event.currentTarget).addClass('disabled');
 letterClicked = $(event.currentTarget).text();
 letterMatch(event.currentTarget);
 
