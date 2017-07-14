@@ -49,19 +49,20 @@ const gameVariables = {
     numberOfAttempts: 6,
     $attemptsDiv: $('#attempts'),
     $pokemonImg: $('#pokemon-pic'),
-    $playAgain: $('<div class="btn btn-outline-success">Play Again</div>')
+    $playAgain: $('<div class="btn btn-outline-success">Play Again</div>'),
+    $pokeballs: $('<img src="images/pokeball.png" class="pokeball-div">')
 
 
 
 };
 //choose random pokemon and display line spaces for letters
 function createPuzzle() {
+
     gameVariables.randomNumber = Math.floor(pokemon.length * Math.random());
     gameVariables.randomPokemon = pokemon[gameVariables.randomNumber].name;
     gameVariables.lettersInPlay = gameVariables.randomPokemon.toUpperCase().split('');
     //display pokemon image
-    
-    var img =$('<img class="hidden img-size" />').attr('src', pokemon[gameVariables.randomNumber].img);
+     var img =$('<img class="hidden img-size" />').attr('src', pokemon[gameVariables.randomNumber].img);
     img.appendTo(gameVariables.$pokemonImg);
     //for every letter in pokemon name, create a linespace
     for (var i=0; i<gameVariables.lettersInPlay.length; i++) {
@@ -75,6 +76,8 @@ function createPuzzle() {
 
     //show the player has 6 attempts
     gameVariables.$attemptsDiv.html('Attempts Remaining: ' + gameVariables.numberOfAttempts);
+    //player has 6 pokeballs which represent lives
+    $('#pokeballs').append(gameVariables.$pokeballs);
     
 
 }
@@ -83,10 +86,11 @@ function createPuzzle() {
 function createKeyboard() {
     var letters = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
     for(var i=0; i<letters.length; i++) {
-    var $keyboard = $('#keyboard')
-    //var button = $('<div>').addClass('btn').html(letter[i]);
-    $keyboard.append('<div class="btn btn-outline-success keys" id="letter-div">'+letters[i]+'</div>');
-}
+
+        var $keyboard = $('#keyboard')
+         //var button = $('<div>').addClass('btn').html(letter[i]);
+        $keyboard.append('<div class="btn btn-outline-success keys" id="letter-div">'+letters[i]+'</div>');
+    }
 }
 
 createPuzzle();
@@ -96,11 +100,12 @@ console.log(gameVariables.arrayOfSpaces);
 
 //adding click function to keys
 $('.keys').on('click', function(event){
-var $keyClickedOn = $(event.target);
-var $keyText = $keyClickedOn.text();
-$keyClickedOn.off('click');
-$keyClickedOn.addClass('disabled');
-playGame($keyText);
+
+    var $keyClickedOn = $(event.target);
+    var $keyText = $keyClickedOn.text();
+    $keyClickedOn.off('click');
+
+    playGame($keyText);
 
 });
 
@@ -108,7 +113,9 @@ playGame($keyText);
 function playGame(x) {
     //if clicked letter is correct
     for (var i=0; i<gameVariables.lettersInPlay.length; i++) {
+
         if (x === gameVariables.lettersInPlay[i]) {
+
             gameVariables.arrayOfSpaces[i] = x;
         //display letter in corresponding linespace
             var newArrayOfSpaces = gameVariables.arrayOfSpaces.join(' ');
@@ -121,6 +128,7 @@ function playGame(x) {
         
         //check if user guesses word correctly 100 percent
             if (gameVariables.$wordDiv.text().replace(/ +/g, "") === gameVariables.randomPokemon.toUpperCase()) {
+
                 //show winner user won
                 alert('you caught ' + gameVariables.randomPokemon + '!')
                 //reveal pokemon image
@@ -130,30 +138,35 @@ function playGame(x) {
                 //display play again option
                 playAgain();
 
-        } 
+            } 
         }
     }
     //if clicker letter is incorrect
     if (gameVariables.lettersInPlay.indexOf(x) === -1) {
-        //letter turns red to indicate incorrect choice
+
+        //letter turns red and disabled to indicate incorrect choice
         $(event.currentTarget).removeClass('btn-outline-success');
-        $(event.currentTarget).addClass('btn-danger');
+        $(event.currentTarget).addClass('btn-danger disabled');
         //number of attempts decrease by 1
         gameVariables.numberOfAttempts -= 1;
         //update attempts div
         gameVariables.$attemptsDiv.html('Attempts Remaining: ' + gameVariables.numberOfAttempts);
         //if user's attempts reach 0, user loses game.
         if (gameVariables.numberOfAttempts === 0) {
+
             //disable keyboard
             $('.keys').off('click');
             //show the pokemon's identity name
             gameVariables.$wordDiv.empty();
+            gameVariables.$wordDiv.html(gameVariables.lettersInPlay.join(' '));
 
             //indicate that opponent has lost
-            alert('The Pokemon has run away!');
+            function runAway(){
+                alert('The Pokemon has run away!')
+            };
+            setTimeout(runAway,500);
             //play again button appears
             playAgain();
-            //click
             
         }
 
@@ -162,6 +175,7 @@ function playGame(x) {
 }
 //pressing play again button allows user to reload new puzzle
 function playAgain(){
+
     //attach play again button below keyboard
     $('#main').append(gameVariables.$playAgain);
     //click event for play again button
@@ -186,18 +200,20 @@ function playAgain(){
         createKeyboard();
         //click event for new keyboard (NOT DRY I KNOW)
         $('.keys').on('click', function(event){
+
             var $keyClickedOn = $(event.target);
             var $keyText = $keyClickedOn.text();
             $keyClickedOn.off('click');
             $keyClickedOn.addClass('disabled');
             playGame($keyText);
 
+            });
         });
-    });
 
     
-}
-
+    }
+    //key event experimentation
+    
 
 
 });
