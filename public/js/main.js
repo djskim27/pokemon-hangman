@@ -38,9 +38,10 @@ const topTierVariables = {
     
     
     }
+    createBoard();
     //Display array of spaces into word-lines
    // var $wordDiv = $('#word-lines');
-    
+    function createBoard(){
     topTierVariables.$wordDiv.append(arrayOfSpaces);
     //create divs for each letter in word
     //for (var i=0; i<lettersInPlay.length; i++) {
@@ -49,7 +50,7 @@ const topTierVariables = {
     //$wordDiv.append('<div id="letter-div" class="d-inline">'+lettersInPlay[i]+'</div>')
     //}
     
-    
+    }
     
     
 
@@ -127,7 +128,7 @@ function resetGame() {
             topTierVariables.$wordDiv.empty();
             arrayOfSpaces = [];
             numberOfAttempts = 6;
-            
+
             $('#attempts').html('Attempts Remaining: ' + numberOfAttempts);
             
             $('.keys').removeClass('btn-success btn-danger disabled');

@@ -4,3 +4,13 @@
     font-family: monospace;
     
 }
+
+.hidden {
+-webkit-filter: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) brightness(200%);
+  filter: contrast(0) sepia(30%) hue-rotate(190deg) saturate(2000%) brightness(50%);
+  opacity: 1;
+}
+
+.img-size {
+    width: 350px;
+}
