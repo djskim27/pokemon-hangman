@@ -3,39 +3,44 @@ $(function() {
 const pokemon = [
     {
         name: 'Bulbasaur',
-        img:'https://vignette4.wikia.nocookie.net/nintendo/images/4/43/Bulbasaur.png/revision/latest?cb=20141002083518&path-prefix=en'
-
+        img:'https://vignette4.wikia.nocookie.net/nintendo/images/4/43/Bulbasaur.png/revision/latest?cb=20141002083518&path-prefix=en',
+        gif: 'http://www.pokestadium.com/sprites/black-white/animated/bulbasaur.gif'
     }, 
     {
         name: 'Charmander',
-        img:'https://vignette1.wikia.nocookie.net/nintendo/images/5/56/Charmander.png/revision/latest?cb=20141002083351&path-prefix=en'
+        img:'https://vignette1.wikia.nocookie.net/nintendo/images/5/56/Charmander.png/revision/latest?cb=20141002083351&path-prefix=en',
+        gif: 'http://www.pokestadium.com/sprites/black-white/animated/charmander.gif'
 
     },
     {
         name: 'Squirtle',
-        img:'https://vignette2.wikia.nocookie.net/nintendo/images/e/e3/Squirtle.png/revision/latest?cb=20141002083243&path-prefix=en'
-
+        img:'https://vignette2.wikia.nocookie.net/nintendo/images/e/e3/Squirtle.png/revision/latest?cb=20141002083243&path-prefix=en',
+        gif: 'http://www.pokestadium.com/sprites/black-white/animated/squirtle.gif'
     },
     {
         name: 'Pikachu',
-        img:'https://vignette2.wikia.nocookie.net/nintendo/images/7/77/Pikachu.png/revision/latest?cb=20141002082401&path-prefix=en'
-
+        img:'https://vignette2.wikia.nocookie.net/nintendo/images/7/77/Pikachu.png/revision/latest?cb=20141002082401&path-prefix=en',
+        gif: 'http://www.pokestadium.com/sprites/black-white/animated/pikachu.gif'
     },
     {
         name: 'Articuno',
-        img: 'https://vignette1.wikia.nocookie.net/nintendo/images/5/52/Articuno.png/revision/latest?cb=20141002090055&path-prefix=en'
+        img: 'https://vignette1.wikia.nocookie.net/nintendo/images/5/52/Articuno.png/revision/latest?cb=20141002090055&path-prefix=en',
+        gif: 'http://www.pokestadium.com/sprites/black-white/animated/articuno.gif'
     },
     {
         name: 'Moltres',
-        img: 'https://vignette2.wikia.nocookie.net/nintendo/images/0/01/Moltres.png/revision/latest?cb=20141002090414&path-prefix=en'
+        img: 'https://vignette2.wikia.nocookie.net/nintendo/images/0/01/Moltres.png/revision/latest?cb=20141002090414&path-prefix=en',
+        gif: 'http://www.pokestadium.com/sprites/black-white/animated/moltres.gif'
     },
     {
         name: 'Zapdos',
-        img: 'https://vignette2.wikia.nocookie.net/nintendo/images/d/d8/Zapdos.png/revision/latest?cb=20141002090124&path-prefix=en'
+        img: 'https://vignette2.wikia.nocookie.net/nintendo/images/d/d8/Zapdos.png/revision/latest?cb=20141002090124&path-prefix=en',
+        gif: 'http://www.pokestadium.com/sprites/black-white/animated/zapdos.gif'
     },
     {
         name: 'Charizard',
-        img: 'https://vignette2.wikia.nocookie.net/nintendo/images/9/95/Charizard.png/revision/latest?cb=20141002083306&path-prefix=en'
+        img: 'https://vignette2.wikia.nocookie.net/nintendo/images/9/95/Charizard.png/revision/latest?cb=20141002083306&path-prefix=en',
+        gif: 'http://www.pokestadium.com/sprites/black-white/animated/charizard.gif'
     }
 ];
 
@@ -50,7 +55,7 @@ const gameVariables = {
     $attemptsDiv: $('#attempts'),
     $pokemonImg: $('#pokemon-pic'),
     $playAgain: $('<div class="btn btn-outline-success">Play Again</div>'),
-    $pokeballs: $('<img src="images/pokeball.png" class="pokeball-div">')
+    $pokeballs: ('<img src="images/pokeball.png" class="pokeball-div">')
 
 
 
@@ -75,30 +80,47 @@ function createPuzzle() {
     gameVariables.$wordDiv.append(gameVariables.arrayOfSpaces);
 
     //show the player has 6 attempts
-    gameVariables.$attemptsDiv.html('Attempts Remaining: ' + gameVariables.numberOfAttempts);
+    gameVariables.$attemptsDiv.html('Pokeballs Remaining:');
     //player has 6 pokeballs which represent lives
-    $('#pokeballs').append(gameVariables.$pokeballs);
+    erasePokeball();
+    pokeballCounter();
     
 
 }
 
 //create keyboard for game
 function createKeyboard() {
-    var letters = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
-    for(var i=0; i<letters.length; i++) {
+    
+   // var letters = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
+    var letters1 = 'qwertyuiop'.toUpperCase().split('');
+    var letters2 = 'asdfghjkl'.toUpperCase().split('');
+    var letters3 = 'zxcvbnm'.toUpperCase().split('');
+    var $keyboard1 = $('#keyboard1');
+    var $keyboard2 = $('#keyboard2');
+    var $keyboard3 = $('#keyboard3');
+    for(var i=0; i<letters1.length; i++) {
 
-        var $keyboard = $('#keyboard')
+       
          //var button = $('<div>').addClass('btn').html(letter[i]);
-        $keyboard.append('<div class="btn btn-outline-success keys" id="letter-div">'+letters[i]+'</div>');
+        $keyboard1.append('<div class="btn btn-outline-success keys" id="letter-div">'+letters1[i]+'</div>');
+        
     }
-}
+    for(var i=0; i<letters2.length; i++) {
 
-createPuzzle();
-createKeyboard();
-console.log(gameVariables.lettersInPlay);
-console.log(gameVariables.arrayOfSpaces);
+       
+         //var button = $('<div>').addClass('btn').html(letter[i]);
+        $keyboard2.append('<div class="btn btn-outline-success keys" id="letter-div">'+letters2[i]+'</div>');
+        
+    }
+    for(var i=0; i<letters3.length; i++) {
 
-//adding click function to keys
+       
+         //var button = $('<div>').addClass('btn').html(letter[i]);
+        $keyboard3.append('<div class="btn btn-outline-success keys" id="letter-div">'+letters3[i]+'</div>');
+        
+    }
+
+    //adding click function to keys
 $('.keys').on('click', function(event){
 
     var $keyClickedOn = $(event.target);
@@ -108,6 +130,15 @@ $('.keys').on('click', function(event){
     playGame($keyText);
 
 });
+    
+}
+
+createPuzzle();
+createKeyboard();
+console.log(gameVariables.lettersInPlay);
+console.log(gameVariables.arrayOfSpaces);
+
+
 
 //play game and try to guess/match correct letters for pokemon
 function playGame(x) {
@@ -130,11 +161,17 @@ function playGame(x) {
             if (gameVariables.$wordDiv.text().replace(/ +/g, "") === gameVariables.randomPokemon.toUpperCase()) {
 
                 //show winner user won
-                alert('you caught ' + gameVariables.randomPokemon + '!')
+                function winQuote() {alert('you caught ' + gameVariables.randomPokemon + '!');}
+                setTimeout(winQuote,500);
+
                 //reveal pokemon image
                 $('.img-size').removeClass('hidden');
                 //disable keyboard
                 $('.keys').off('click');
+                //store caught pokemon in pokebox
+                var pokeGif = $('<img class="gif-size">').attr('src', pokemon[gameVariables.randomNumber].gif);
+
+                pokeGif.appendTo($('.modal-body'));
                 //display play again option
                 playAgain();
 
@@ -151,11 +188,15 @@ function playGame(x) {
         gameVariables.numberOfAttempts -= 1;
         //update attempts div
         gameVariables.$attemptsDiv.html('Attempts Remaining: ' + gameVariables.numberOfAttempts);
+        //update pokeball
+        erasePokeball();
+        pokeballCounter();
         //if user's attempts reach 0, user loses game.
         if (gameVariables.numberOfAttempts === 0) {
 
             //disable keyboard
             $('.keys').off('click');
+
             //show the pokemon's identity name
             gameVariables.$wordDiv.empty();
             gameVariables.$wordDiv.html(gameVariables.lettersInPlay.join(' '));
@@ -167,6 +208,7 @@ function playGame(x) {
             setTimeout(runAway,500);
             //play again button appears
             playAgain();
+            
             
         }
 
@@ -193,27 +235,34 @@ function playAgain(){
         gameVariables.$pokemonImg.empty();
         gameVariables.$attemptsDiv.empty();
         //empty keyboard
-        $('#keyboard').empty();
+        $('#keyboard1').empty();
+        $('#keyboard2').empty();
+        $('#keyboard3').empty();
         //load gamepuzzle
         createPuzzle();
         //load keyboard
         createKeyboard();
-        //click event for new keyboard (NOT DRY I KNOW)
-        $('.keys').on('click', function(event){
 
-            var $keyClickedOn = $(event.target);
-            var $keyText = $keyClickedOn.text();
-            $keyClickedOn.off('click');
-            $keyClickedOn.addClass('disabled');
-            playGame($keyText);
-
-            });
         });
 
     
     }
-    //key event experimentation
+    //pokeball life counter
+    function pokeballCounter() {
+        for (var i=0; i<gameVariables.numberOfAttempts; i++) {
+               $('#pokeballs').append(gameVariables.$pokeballs)
+        }
+    }
+    //erase pokeball div
+    function erasePokeball() {
+        $('#pokeballs').empty();
+    }
+    //pokebox modal 
+    $('#pokeboxModal').on('shown.bs.modal', function () {
+        $('#pokeboxTitle').focus()
+    })
+    //test for pokebox
     
-
+  
 
 });

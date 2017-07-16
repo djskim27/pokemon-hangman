@@ -1,16 +1,16 @@
+#word-lines {
+    font-size: 30px;
+    font-family: 'palatino';
+}
 #letter-div {
-    margin: 5px 5px 5px 5px;
-    font-size: 10px;
+    margin: 3px 3px 3px 3px;
+    font-size: 15px;
     font-family: monospace;
     
 }
 
-#keyboard {
-    width: 700px;
-    margin: 0 auto;
-    
 
-}
+
 
 .hidden {
 -webkit-filter: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) brightness(500%);
@@ -19,9 +19,14 @@
 }
 
 .img-size {
-    width: 350px;
+    width: 300px;
 }
 
 .pokeball-div {
     width: 50px;
 }
+
+.gif-size {
+    
+}
+
