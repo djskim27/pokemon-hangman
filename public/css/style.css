@@ -1,20 +1,30 @@
+body {
+  background: url('images/nature.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 #word-lines {
     font-size: 30px;
     font-family: 'palatino';
 }
 #letter-div {
     margin: 3px 3px 3px 3px;
-    font-size: 15px;
+    font-size: 13px;
     font-family: monospace;
+    
     
 }
 
-
-
+.white {
+    background: rgba(255, 255, 255, 0.5);
+}
 
 .hidden {
 -webkit-filter: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) brightness(500%);
-  filter: contrast(0) sepia(30%) hue-rotate(-40deg) saturate(2000%) brightness(100%);
+  filter: contrast(0) sepia(30%) hue-rotate(180deg) saturate(2000%) brightness(50%);
   opacity: 1;
 }
 
@@ -26,7 +36,21 @@
     width: 50px;
 }
 
-.gif-size {
-    
+.pokebox { 
+    border-radius: 20px;
 }
 
+.modal-body {
+  background: url('images/pokebox.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.stats {
+    background: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    border-radius: 10px;
+    
+}

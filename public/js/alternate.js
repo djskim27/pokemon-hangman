@@ -55,7 +55,9 @@ const gameVariables = {
     $attemptsDiv: $('#attempts'),
     $pokemonImg: $('#pokemon-pic'),
     $playAgain: $('<div class="btn btn-outline-success">Play Again</div>'),
-    $pokeballs: ('<img src="images/pokeball.png" class="pokeball-div">')
+    $pokeballs: ('<img src="css/images/pokeball.png" class="pokeball-div">'),
+    win: 0,
+    loss: 0,
 
 
 
@@ -84,6 +86,9 @@ function createPuzzle() {
     //player has 6 pokeballs which represent lives
     erasePokeball();
     pokeballCounter();
+    //show win and loss numbers in pokebox modal
+    $('.win').html('Caught: ' + gameVariables.win);
+    $('.loss').html('Ran Away: ' + gameVariables.loss);
     
 
 }
@@ -102,21 +107,21 @@ function createKeyboard() {
 
        
          //var button = $('<div>').addClass('btn').html(letter[i]);
-        $keyboard1.append('<div class="btn btn-outline-success keys" id="letter-div">'+letters1[i]+'</div>');
+        $keyboard1.append('<div class="btn btn-outline-primary keys white" id="letter-div">'+letters1[i]+'</div>');
         
     }
     for(var i=0; i<letters2.length; i++) {
 
        
          //var button = $('<div>').addClass('btn').html(letter[i]);
-        $keyboard2.append('<div class="btn btn-outline-success keys" id="letter-div">'+letters2[i]+'</div>');
+        $keyboard2.append('<div class="btn btn-outline-primary keys white" id="letter-div">'+letters2[i]+'</div>');
         
     }
     for(var i=0; i<letters3.length; i++) {
 
        
          //var button = $('<div>').addClass('btn').html(letter[i]);
-        $keyboard3.append('<div class="btn btn-outline-success keys" id="letter-div">'+letters3[i]+'</div>');
+        $keyboard3.append('<div class="btn btn-outline-primary keys white" id="letter-div">'+letters3[i]+'</div>');
         
     }
 
@@ -154,7 +159,7 @@ function playGame(x) {
             gameVariables.$wordDiv.text(newArrayOfSpaces);
         
         //letter turns green to indicate correct choice
-            $(event.currentTarget).removeClass('btn-outline-success');
+            $(event.currentTarget).removeClass('btn-outline-primary white');
             $(event.currentTarget).addClass('btn-success');
         
         //check if user guesses word correctly 100 percent
@@ -172,6 +177,9 @@ function playGame(x) {
                 var pokeGif = $('<img class="gif-size">').attr('src', pokemon[gameVariables.randomNumber].gif);
 
                 pokeGif.appendTo($('.modal-body'));
+                //update win stat
+                gameVariables.win += 1;
+                $('.win').html('Caught: ' + gameVariables.win)
                 //display play again option
                 playAgain();
 
@@ -182,12 +190,10 @@ function playGame(x) {
     if (gameVariables.lettersInPlay.indexOf(x) === -1) {
 
         //letter turns red and disabled to indicate incorrect choice
-        $(event.currentTarget).removeClass('btn-outline-success');
+        $(event.currentTarget).removeClass('btn-outline-primary');
         $(event.currentTarget).addClass('btn-danger disabled');
         //number of attempts decrease by 1
         gameVariables.numberOfAttempts -= 1;
-        //update attempts div
-        gameVariables.$attemptsDiv.html('Attempts Remaining: ' + gameVariables.numberOfAttempts);
         //update pokeball
         erasePokeball();
         pokeballCounter();
@@ -208,6 +214,9 @@ function playGame(x) {
             setTimeout(runAway,500);
             //play again button appears
             playAgain();
+             //update loss stat
+            gameVariables.loss += 1
+            $('.loss').html('Ran Away: ' + gameVariables.loss);
             
             
         }
