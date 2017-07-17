@@ -1,71 +1,95 @@
 body {
+
   background: url('images/nature.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
 }
 
 h1 {
+
     font-family: 'Luckiest Guy', cursive;;
     font-size: 55px;
     color: #FFCB05;
        -webkit-text-stroke-width: 4px;
    -webkit-text-stroke-color:#395EA9;
    margin-top: 15px;
+   
 }
 
-
-
 #word-lines {
+
     font-size: 35px;
     font-family: 'Fredoka One', cursive;
 }
+
 #letter-div {
+
     margin: 3px 3px 3px 3px;
     font-size: 13px;
     font-family: monospace;
     
-    
 }
 
 .white {
+
     background: rgba(255, 255, 255, 0.7);
+
 }
 
 .hidden {
+
 -webkit-filter: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) brightness(500%);
   filter: contrast(0) sepia(30%) hue-rotate(180deg) saturate(2000%) brightness(50%);
   opacity: 1;
+
 }
 
 #pokemon-pic {
+
     margin-top: -10px;
     height: 300px;
+
 }
 
 .img-size {
+
     height: 300px;
+
+}
+
+#pokeballs {
+
+    height: 50px;
 
 }
 
 .pokeball-div {
-    width: 50px;
+
+    height: 50px;
+
 }
 
 .pokebox { 
+
     border-radius: 20px;
+
 }
 
 .modal-body {
+
   background: url('images/pokebox.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
 }
 
 .stats {
+
     background: rgba(255, 255, 255, 0.8);
     font-size: 14px;
     border-radius: 10px;
@@ -73,15 +97,19 @@ h1 {
 }
 
 .footer {
+
     color: white;
     margin-top: 5%;
+
 }
 
 
 
 
 @media (max-width: 539px) {
+
     h1 {
+
         font-family: 'Luckiest Guy', cursive;;
         font-size: 40px;
         color: #FFCB05;
@@ -92,24 +120,37 @@ h1 {
     }
 
     .img-size {
-         width: 250px;
+
+         height: 200px;
 
     }
 
     #word-lines {
+
         font-size: 20px;
         font-family: 'Fredoka One', cursive;
+
     }
 
     #letter-div {
+
         margin: 0px 0px 0px 0px;
         padding: 8px 8px 8px 8px;
         font-size: 10px;
         font-family: monospace;
     
+    }
+
+    #pokeballs {
+
+    height: 50px;
 
     }
+
     .pokeball-div {
-        width: 30px;
+
+        height: 30px;
+
     }
+
 }

@@ -27,7 +27,7 @@ function createPuzzle() {
     gameVariables.randomNumber = Math.floor(pokemon.length * Math.random());
     gameVariables.randomPokemon = pokemon[gameVariables.randomNumber].name;
     gameVariables.lettersInPlay = gameVariables.randomPokemon.toUpperCase().split('');
-    //display pokemon image
+    //display pokemon image AND fade
      var img =$('<img class="hidden img-size img-fluid" />').attr('src', pokemon[gameVariables.randomNumber].img).hide().fadeIn(200);
     img.appendTo(gameVariables.$pokemonImg);
     //for every letter in pokemon name, create a linespace
@@ -52,6 +52,9 @@ function createPuzzle() {
     //show win and loss numbers in pokebox modal
     $('.win').html('Caught: ' + gameVariables.win);
     $('.loss').html('Ran Away: ' + gameVariables.loss);
+
+    //show my name in the footer
+    $('.footer').html('by David Kim')
     
 
 }
