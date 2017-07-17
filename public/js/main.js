@@ -28,7 +28,7 @@ function createPuzzle() {
     gameVariables.randomPokemon = pokemon[gameVariables.randomNumber].name;
     gameVariables.lettersInPlay = gameVariables.randomPokemon.toUpperCase().split('');
     //display pokemon image
-     var img =$('<img class="hidden img-size img-fluid" />').attr('src', pokemon[gameVariables.randomNumber].img).hide().fadeIn(2000);
+     var img =$('<img class="hidden img-size img-fluid" />').attr('src', pokemon[gameVariables.randomNumber].img).hide().fadeIn(200);
     img.appendTo(gameVariables.$pokemonImg);
     //for every letter in pokemon name, create a linespace
     for (var i=0; i<gameVariables.lettersInPlay.length; i++) {
@@ -45,6 +45,7 @@ function createPuzzle() {
     //player has 6 pokeballs which represent lives
     erasePokeball();
     pokeballCounter();
+   
     //show win and loss numbers in pokebox modal
     $('.win').html('Caught: ' + gameVariables.win);
     $('.loss').html('Ran Away: ' + gameVariables.loss);
