@@ -8,6 +8,8 @@ This game is a Pokemon themed version of Hangman! The user has 6 attempts (pokeb
 - Javascript
 - Bootstrap 4
 - jQuery
+- Google Fonts
+- Editor: VS Code
 
 Online Site: http://djskim27pokemon-hangman.bitballoon.com/
 
