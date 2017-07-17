@@ -75,3 +75,40 @@ h1 {
     color: white;
     margin-top: 5%;
 }
+
+
+
+
+@media (max-width: 539px) {
+    h1 {
+        font-family: 'Luckiest Guy', cursive;;
+        font-size: 40px;
+        color: #FFCB05;
+         -webkit-text-stroke-width: 4px;
+         -webkit-text-stroke-color:#395EA9;
+        margin-top: 10px;
+
+    }
+
+    .img-size {
+         width: 250px;
+
+    }
+
+    #word-lines {
+        font-size: 20px;
+        font-family: 'Fredoka One', cursive;
+    }
+
+    #letter-div {
+        margin: 0px 0px 0px 0px;
+        padding: 8px 8px 8px 8px;
+        font-size: 10px;
+        font-family: monospace;
+    
+
+    }
+    .pokeball-div {
+        width: 30px;
+    }
+}

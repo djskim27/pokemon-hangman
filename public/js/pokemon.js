@@ -128,7 +128,7 @@ const pokemon = [
     },
     {
         name: 'Ivysaur',
-        img: 'css/images/ivysaur/png',
+        img: 'css/images/ivysaur.png',
         gif: 'css/images/ivysaur.gif',
     },
     {
@@ -178,8 +178,8 @@ const pokemon = [
     },
     {
         name: 'Diglet',
-        img: 'css/images/diglet.png',
-        gif: 'css/images/diglet.gif',
+        img: 'css/images/diglett.png',
+        gif: 'css/images/diglettf.gif',
     },
     {
         name: 'Machop',
