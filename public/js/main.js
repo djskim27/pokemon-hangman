@@ -28,7 +28,7 @@ function createPuzzle() {
     gameVariables.randomPokemon = pokemon[gameVariables.randomNumber].name;
     gameVariables.lettersInPlay = gameVariables.randomPokemon.toUpperCase().split('');
     //display pokemon image AND fade
-     var img =$('<img class="hidden img-size img-fluid" />').attr('src', pokemon[gameVariables.randomNumber].img).hide().fadeIn(200);
+     var img =$('<img class="hidden img-size img-fluid" />').attr('src', pokemon[gameVariables.randomNumber].img).hide().fadeIn(500);
     img.appendTo(gameVariables.$pokemonImg);
     //for every letter in pokemon name, create a linespace
     for (var i=0; i<gameVariables.lettersInPlay.length; i++) {
