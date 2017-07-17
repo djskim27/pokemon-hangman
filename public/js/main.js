@@ -45,6 +45,9 @@ function createPuzzle() {
     //player has 6 pokeballs which represent lives
     erasePokeball();
     pokeballCounter();
+
+    //shows pokebox button at bottom of page
+    $('#pokebox').append('<button type="button" id ="poke-button" class="btn btn-outline-primary white" data-toggle="modal" data-target="#pokeboxModal">Pokebox</button>')
    
     //show win and loss numbers in pokebox modal
     $('.win').html('Caught: ' + gameVariables.win);
@@ -200,6 +203,7 @@ function playAgain(){
         gameVariables.$wordDiv.empty();
         gameVariables.$pokemonImg.empty();
         gameVariables.$attemptsDiv.empty();
+        $('#pokebox').empty();
         //empty keyboard
         $('#keyboard1').empty();
         $('#keyboard2').empty();
