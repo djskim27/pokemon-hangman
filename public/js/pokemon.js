@@ -177,9 +177,9 @@ const pokemon = [
         gif: 'css/images/rhydon.gif',
     },
     {
-        name: 'Diglet',
+        name: 'Diglett',
         img: 'css/images/diglett.png',
-        gif: 'css/images/diglettf.gif',
+        gif: 'css/images/diglett.gif',
     },
     {
         name: 'Machop',
