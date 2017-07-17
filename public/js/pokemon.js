@@ -245,6 +245,42 @@ const pokemon = [
         name: 'Lugia',
         img: 'css/images/lugia.png',
         gif: 'css/images/lugia.gif',
+    },
+    {
+        name: 'Victini',
+        img: 'css/images/victini.png',
+        gif: 'css/images/victini.gif'
+    },
+    {
+        name: 'Clefairy',
+        img: 'css/images/clefairy.png',
+        gif: 'css/images/clefairy.gif',
+    },
+    {
+        name: 'Wobbuffet',
+        img: 'css/images/wobbuffet.png',
+        gif: 'css/images/wobbuffet.gif'
+
+    },
+    {
+        name: 'Groudon',
+        img: 'css/images/groudon.png',
+        gif: 'css/images/groudon.gif'
+    },
+    {
+        name: 'Rattata',
+        img: 'css/images/rattata.png',
+        gif: 'css/images/rattata.gif'
+    },
+    {
+        name: 'Goodra',
+        img: 'css/images/goodra.png',
+        gif: 'css/images/goodragif.png'
+    },
+    {
+        name: 'Tyranitar',
+        img: 'css/images/tyranitar.png',
+        gif: 'css/images/tyranitar.gif'
     }
    
    
