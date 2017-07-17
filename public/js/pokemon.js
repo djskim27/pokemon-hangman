@@ -281,7 +281,72 @@ const pokemon = [
         name: 'Tyranitar',
         img: 'css/images/tyranitar.png',
         gif: 'css/images/tyranitar.gif'
-    }
-   
-   
+    },
+    {
+
+        name: 'Caterpie',
+        img: 'css/images/caterpie.png',
+        gif: 'css/images/caterpie.gif'
+    },
+    {   
+
+        name: 'Metapod',
+        img: 'css/images/metapod.png',
+        gif: 'css/images/metapod.gif'
+    
+    },
+    {
+
+        name: 'Weedle',
+        img: 'css/images/weedle.png',
+        gif: 'css/images/weedle.gif'
+
+    },
+   {
+       name: 'Kakuna',
+       img: 'css/images/kakuna.png',
+       gif: 'css/images/kakuna.gif'
+   },
+   {
+       name: 'Beedrill',
+       img: 'css/images/beedrill.png',
+       gif: 'css/images/beedrill.gif'
+   },
+   {
+       name: 'Pidgeotto',
+       img: 'css/images/pidgeotto.png',
+       gif: 'css/images/pidgeotto.gif',
+   },
+   {
+       name: 'Pidgeot',
+       img: 'css/images/pidgeot.png',
+       gif: 'css/images/pidgeot.gif',
+   },
+   {
+       name: 'Raticate',
+       img: 'css/images/raticate.png',
+       gif: 'css/images/raticate.gif'
+   },
+   {
+       name: 'Spearow',
+       img: 'css/images/spearow.png',
+       gif: 'css/images/spearow.gif'
+   },
+   {
+       name: 'Fearow',
+       img: 'css/images/fearow.png',
+       gif: 'css/images/fearow.gif'
+   },
+   {
+       name: 'Ekans',
+       img: 'css/images/ekans.png',
+       gif: 'css/images/ekans.gif'
+
+   },
+   {
+       name: 'Arbok',
+       img: 'css/images/arbok.png',
+       gif: 'css/images/arbok.gif'
+   },
+  
 ];
