@@ -2,43 +2,250 @@
 const pokemon = [
     {
         name: 'Bulbasaur',
-        img:'https://vignette4.wikia.nocookie.net/nintendo/images/4/43/Bulbasaur.png/revision/latest?cb=20141002083518&path-prefix=en',
-        gif: 'http://www.pokestadium.com/sprites/black-white/animated/bulbasaur.gif'
+        img:'images/bulbasaur.png',
+        gif: 'images/bulbasaur.gif'
     }, 
     {
         name: 'Charmander',
-        img:'https://vignette1.wikia.nocookie.net/nintendo/images/5/56/Charmander.png/revision/latest?cb=20141002083351&path-prefix=en',
-        gif: 'http://www.pokestadium.com/sprites/black-white/animated/charmander.gif'
+        img:'images/charmander.png',
+        gif: 'images/charmander.gif'
 
     },
     {
         name: 'Squirtle',
-        img:'https://vignette2.wikia.nocookie.net/nintendo/images/e/e3/Squirtle.png/revision/latest?cb=20141002083243&path-prefix=en',
-        gif: 'http://www.pokestadium.com/sprites/black-white/animated/squirtle.gif'
+        img:'images/squirtle.png',
+        gif: 'images/squirtle.gif'
     },
     {
         name: 'Pikachu',
-        img:'https://vignette2.wikia.nocookie.net/nintendo/images/7/77/Pikachu.png/revision/latest?cb=20141002082401&path-prefix=en',
-        gif: 'http://www.pokestadium.com/sprites/black-white/animated/pikachu.gif'
+        img:'',
+        gif: ''
     },
     {
         name: 'Articuno',
-        img: 'https://vignette1.wikia.nocookie.net/nintendo/images/5/52/Articuno.png/revision/latest?cb=20141002090055&path-prefix=en',
-        gif: 'http://www.pokestadium.com/sprites/black-white/animated/articuno.gif'
+        img: '',
+        gif: ''
     },
     {
         name: 'Moltres',
-        img: 'https://vignette2.wikia.nocookie.net/nintendo/images/0/01/Moltres.png/revision/latest?cb=20141002090414&path-prefix=en',
-        gif: 'http://www.pokestadium.com/sprites/black-white/animated/moltres.gif'
+        img: '',
+        gif: ''
     },
     {
         name: 'Zapdos',
-        img: 'https://vignette2.wikia.nocookie.net/nintendo/images/d/d8/Zapdos.png/revision/latest?cb=20141002090124&path-prefix=en',
-        gif: 'http://www.pokestadium.com/sprites/black-white/animated/zapdos.gif'
+        img: '',
+        gif: ''
     },
     {
         name: 'Charizard',
-        img: 'https://vignette2.wikia.nocookie.net/nintendo/images/9/95/Charizard.png/revision/latest?cb=20141002083306&path-prefix=en',
-        gif: 'http://www.pokestadium.com/sprites/black-white/animated/charizard.gif'
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Blastoise',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Venusaur',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Dragonite',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Magikarp',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Geodude',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Gyarados',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Mew',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Mewtwo',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Vaporeon',
+        img: '',
+        gif: '',
+    },
+       {
+        name: 'Flareon',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Eevee',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Jolteon',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Arcanine',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Vulpix',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Growlithe',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Ninetales',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Lapras',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Ivysaur',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Wartortle',
+        img: '',
+        gif: '',
+    },
+       {
+        name: 'Charmeleon',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Snorlax',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Heracross',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Scyther',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Scizor',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Abra',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Alakazam',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Rhydon',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Diglet',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Machop',
+        img: '',
+        gif: '',
+    },
+       {
+        name: 'Slowpoke',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Butterfree',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Grimer',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Gengar',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Kabuto',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Tauros',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Lucario',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Greninja',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Blaziken',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Hitmonchan',
+        img: '',
+        gif: '',
+    },
+    {
+        name: 'Togepi',
+        img: '',
+        gif: '',
+    },
+     {
+        name: 'Lugia',
+        img: '',
+        gif: '',
     }
+   
+   
 ];
