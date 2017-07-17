@@ -2,249 +2,249 @@
 const pokemon = [
     {
         name: 'Bulbasaur',
-        img:'images/bulbasaur.png',
-        gif: 'images/bulbasaur.gif'
+        img:'css/images/bulbasaur.png',
+        gif: 'css/images/bulbasaur.gif'
     }, 
     {
         name: 'Charmander',
-        img:'images/charmander.png',
-        gif: 'images/charmander.gif'
+        img:'css/images/charmander.png',
+        gif: 'css/images/charmander.gif'
 
     },
     {
         name: 'Squirtle',
-        img:'images/squirtle.png',
-        gif: 'images/squirtle.gif'
+        img:'css/images/squirtle.png',
+        gif: 'css/images/squirtle.gif'
     },
     {
         name: 'Pikachu',
-        img:'',
-        gif: ''
+        img:'css/images/pikachu.png',
+        gif: 'css/images/pikachu.gif'
     },
     {
         name: 'Articuno',
-        img: '',
-        gif: ''
+        img: 'css/images/articuno.png',
+        gif: 'css/images/articuno.gif'
     },
     {
         name: 'Moltres',
-        img: '',
-        gif: ''
+        img: 'css/images/moltres.png',
+        gif: 'css/images/moltres.gif'
     },
     {
         name: 'Zapdos',
-        img: '',
-        gif: ''
+        img: 'css/images/zapdos.png',
+        gif: 'css/images/zapdos.gif'
     },
     {
         name: 'Charizard',
-        img: '',
-        gif: '',
+        img: 'css/images/charizard.png',
+        gif: 'css/images/charizard.gif',
     },
     {
         name: 'Blastoise',
-        img: '',
-        gif: '',
+        img: 'css/images/blastoise.png',
+        gif: 'css/images/blastoise.gif',
     },
     {
         name: 'Venusaur',
-        img: '',
-        gif: '',
+        img: 'css/images/venusaur.png',
+        gif: 'css/images/venusaur.gif',
     },
     {
         name: 'Dragonite',
-        img: '',
-        gif: '',
+        img: 'css/images/dragonite.png',
+        gif: 'css/images/dragonite.gif',
     },
     {
         name: 'Magikarp',
-        img: '',
-        gif: '',
+        img: 'css/images/magikarp.png',
+        gif: 'css/images/magikarp.gif',
     },
     {
         name: 'Geodude',
-        img: '',
-        gif: '',
+        img: 'css/images/geodude.png',
+        gif: 'css/images/geodude.gif',
     },
     {
         name: 'Gyarados',
-        img: '',
-        gif: '',
+        img: 'css/images/gyarados.png',
+        gif: 'css/images/gyarados.gif',
     },
     {
         name: 'Mew',
-        img: '',
-        gif: '',
+        img: 'css/images/mew.png',
+        gif: 'css/images/mew.gif',
     },
     {
         name: 'Mewtwo',
-        img: '',
-        gif: '',
+        img: 'css/images/mewtwo.png',
+        gif: 'css/images/mewtwo.gif',
     },
     {
         name: 'Vaporeon',
-        img: '',
-        gif: '',
+        img: 'css/images/vaporeon.png',
+        gif: 'css/images/vaporeon.gif',
     },
        {
         name: 'Flareon',
-        img: '',
-        gif: '',
+        img: 'css/images/flareon.png',
+        gif: 'css/images/flareon.gif',
     },
     {
         name: 'Eevee',
-        img: '',
-        gif: '',
+        img: 'css/images/eevee.png',
+        gif: 'css/images/eevee.gif',
     },
     {
         name: 'Jolteon',
-        img: '',
-        gif: '',
+        img: 'css/images/jolteon.png',
+        gif: 'css/images/jolteon.gif',
     },
     {
         name: 'Arcanine',
-        img: '',
-        gif: '',
+        img: 'css/images/arcanine.png',
+        gif: 'css/images/arcanine.gif',
     },
     {
         name: 'Vulpix',
-        img: '',
-        gif: '',
+        img: 'css/images/vulpix.png',
+        gif: 'css/images/vulpix.gif',
     },
     {
         name: 'Growlithe',
-        img: '',
-        gif: '',
+        img: 'css/images/growlithe.png',
+        gif: 'css/images/growlithe.gif',
     },
     {
         name: 'Ninetales',
-        img: '',
-        gif: '',
+        img: 'css/images/ninetales.png',
+        gif: 'css/images/ninetales.gif',
     },
     {
         name: 'Lapras',
-        img: '',
-        gif: '',
+        img: 'css/images/lapras.png',
+        gif: 'css/images/lapras.gif',
     },
     {
         name: 'Ivysaur',
-        img: '',
-        gif: '',
+        img: 'css/images/ivysaur/png',
+        gif: 'css/images/ivysaur.gif',
     },
     {
         name: 'Wartortle',
-        img: '',
-        gif: '',
+        img: 'css/images/wartortle.png',
+        gif: 'css/images/wartortle.gif',
     },
        {
         name: 'Charmeleon',
-        img: '',
-        gif: '',
+        img: 'css/images/charmeleon.png',
+        gif: 'css/images/charmeleon.gif',
     },
     {
         name: 'Snorlax',
-        img: '',
-        gif: '',
+        img: 'css/images/snorlax.png',
+        gif: 'css/images/snorlax.gif',
     },
     {
         name: 'Heracross',
-        img: '',
-        gif: '',
+        img: 'css/images/heracross.png',
+        gif: 'css/images/heracross.gif',
     },
     {
         name: 'Scyther',
-        img: '',
-        gif: '',
+        img: 'css/images/scyther.png',
+        gif: 'css/images/scyther.gif',
     },
     {
         name: 'Scizor',
-        img: '',
-        gif: '',
+        img: 'css/images/scizor.png',
+        gif: 'css/images/scizor.gif',
     },
     {
         name: 'Abra',
-        img: '',
-        gif: '',
+        img: 'css/images/abra.png',
+        gif: 'css/images/abra.gif',
     },
     {
         name: 'Alakazam',
-        img: '',
-        gif: '',
+        img: 'css/images/alakazam.png',
+        gif: 'css/images/alakazam.gif',
     },
     {
         name: 'Rhydon',
-        img: '',
-        gif: '',
+        img: 'css/images/rhydon.png',
+        gif: 'css/images/rhydon.gif',
     },
     {
         name: 'Diglet',
-        img: '',
-        gif: '',
+        img: 'css/images/diglet.png',
+        gif: 'css/images/diglet.gif',
     },
     {
         name: 'Machop',
-        img: '',
-        gif: '',
+        img: 'css/images/machop.png',
+        gif: 'css/images/machop.gif',
     },
        {
         name: 'Slowpoke',
-        img: '',
-        gif: '',
+        img: 'css/images/slowpoke.png',
+        gif: 'css/images/slowpoke.gif',
     },
     {
         name: 'Butterfree',
-        img: '',
-        gif: '',
+        img: 'css/images/butterfree.png',
+        gif: 'css/images/butterfree.gif',
     },
     {
         name: 'Grimer',
-        img: '',
-        gif: '',
+        img: 'css/images/grimer.png',
+        gif: 'css/images/grimer.gif',
     },
     {
         name: 'Gengar',
-        img: '',
-        gif: '',
+        img: 'css/images/gengar.png',
+        gif: 'css/images/gengar.gif',
     },
     {
         name: 'Kabuto',
-        img: '',
-        gif: '',
+        img: 'css/images/kabuto.png',
+        gif: 'css/images/kabuto.gif',
     },
     {
         name: 'Tauros',
-        img: '',
-        gif: '',
+        img: 'css/images/tauros.png',
+        gif: 'css/images/tauros.gif',
     },
     {
         name: 'Lucario',
-        img: '',
-        gif: '',
+        img: 'css/images/lucario.png',
+        gif: 'css/images/lucario.gif',
     },
     {
         name: 'Greninja',
-        img: '',
-        gif: '',
+        img: 'css/images/greninja1.png',
+        gif: 'css/images/greninja.png',
     },
     {
         name: 'Blaziken',
-        img: '',
-        gif: '',
+        img: 'css/images/blaziken.png',
+        gif: 'css/images/blaziken.gif',
     },
     {
         name: 'Hitmonchan',
-        img: '',
-        gif: '',
+        img: 'css/images/hitmonchan.png',
+        gif: 'css/images/hitmonchan.gif',
     },
     {
         name: 'Togepi',
-        img: '',
-        gif: '',
+        img: 'css/images/togepi.png',
+        gif: 'css/images/togepi.gif',
     },
      {
         name: 'Lugia',
-        img: '',
-        gif: '',
+        img: 'css/images/lugia.png',
+        gif: 'css/images/lugia.gif',
     }
    
    
