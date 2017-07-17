@@ -54,7 +54,7 @@ const gameVariables = {
     numberOfAttempts: 6,
     $attemptsDiv: $('#attempts'),
     $pokemonImg: $('#pokemon-pic'),
-    $playAgain: $('<div class="btn btn-outline-success">Play Again</div>'),
+    $playAgain: $('<div class="btn btn-outline-danger white">Next Pokemon</div>'),
     $pokeballs: ('<img src="css/images/pokeball.png" class="pokeball-div">'),
     win: 0,
     loss: 0,
@@ -74,7 +74,7 @@ function createPuzzle() {
     //for every letter in pokemon name, create a linespace
     for (var i=0; i<gameVariables.lettersInPlay.length; i++) {
 
-        gameVariables.arrayOfSpaces.push('__ ');
+        gameVariables.arrayOfSpaces.push('_ ');
 
     };
     
@@ -166,8 +166,8 @@ function playGame(x) {
             if (gameVariables.$wordDiv.text().replace(/ +/g, "") === gameVariables.randomPokemon.toUpperCase()) {
 
                 //show winner user won
-                function winQuote() {alert('you caught ' + gameVariables.randomPokemon + '!');}
-                setTimeout(winQuote,500);
+                function winQuote() {alert('You caught ' + gameVariables.randomPokemon + '!');}
+                setTimeout(winQuote,300);
 
                 //reveal pokemon image
                 $('.img-size').removeClass('hidden');
@@ -209,9 +209,9 @@ function playGame(x) {
 
             //indicate that opponent has lost
             function runAway(){
-                alert('The Pokemon has run away!')
+                alert(gameVariables.randomPokemon +  ' ran away!')
             };
-            setTimeout(runAway,500);
+            setTimeout(runAway,300);
             //play again button appears
             playAgain();
              //update loss stat
@@ -228,7 +228,10 @@ function playGame(x) {
 function playAgain(){
 
     //attach play again button below keyboard
-    $('#main').append(gameVariables.$playAgain);
+    function playAgainButton() {
+        $('#pokebox').append(gameVariables.$playAgain);
+    };
+    setTimeout(playAgainButton,400);
     //click event for play again button
     gameVariables.$playAgain.on('click', function(event){
         //remove button
@@ -270,7 +273,13 @@ function playAgain(){
     $('#pokeboxModal').on('shown.bs.modal', function () {
         $('#pokeboxTitle').focus()
     })
-    //test for pokebox
+    //restart the game and release all pokemon
+    $('#restart').on('click', function(){
+        alert('All your pokemon have been released!');
+        location.reload();
+        
+
+    });
     
   
 

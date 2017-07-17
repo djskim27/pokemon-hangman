@@ -6,9 +6,20 @@ body {
   background-size: cover;
 }
 
+h1 {
+    font-family: 'Luckiest Guy', cursive;;
+    font-size: 70px;
+    color: #FFCB05;
+       -webkit-text-stroke-width: 4px;
+   -webkit-text-stroke-color:#395EA9;
+   margin-top: 15px;
+}
+
+
+
 #word-lines {
-    font-size: 30px;
-    font-family: 'palatino';
+    font-size: 35px;
+    font-family: 'Fredoka One', cursive;
 }
 #letter-div {
     margin: 3px 3px 3px 3px;
@@ -28,8 +39,13 @@ body {
   opacity: 1;
 }
 
+#pokemon-pic {
+    margin-top: -10px;
+}
+
 .img-size {
     width: 300px;
+
 }
 
 .pokeball-div {
@@ -53,4 +69,9 @@ body {
     font-size: 14px;
     border-radius: 10px;
     
+}
+
+.footer {
+    color: white;
+    margin-top: 5%;
 }
