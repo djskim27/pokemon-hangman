@@ -18,6 +18,9 @@ const gameVariables = {
 
 
 };
+//Start Game
+createPuzzle();
+createKeyboard();
 //choose random pokemon and display line spaces for letters
 function createPuzzle() {
 
@@ -25,7 +28,7 @@ function createPuzzle() {
     gameVariables.randomPokemon = pokemon[gameVariables.randomNumber].name;
     gameVariables.lettersInPlay = gameVariables.randomPokemon.toUpperCase().split('');
     //display pokemon image
-     var img =$('<img class="hidden img-size img-fluid" />').attr('src', pokemon[gameVariables.randomNumber].img);
+     var img =$('<img class="hidden img-size img-fluid" />').attr('src', pokemon[gameVariables.randomNumber].img).hide().fadeIn(2000);
     img.appendTo(gameVariables.$pokemonImg);
     //for every letter in pokemon name, create a linespace
     for (var i=0; i<gameVariables.lettersInPlay.length; i++) {
@@ -52,31 +55,27 @@ function createPuzzle() {
 //create keyboard for game
 function createKeyboard() {
     
-   // var letters = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
     var letters1 = 'qwertyuiop'.toUpperCase().split('');
     var letters2 = 'asdfghjkl'.toUpperCase().split('');
     var letters3 = 'zxcvbnm'.toUpperCase().split('');
     var $keyboard1 = $('#keyboard1');
     var $keyboard2 = $('#keyboard2');
     var $keyboard3 = $('#keyboard3');
+    //first row
     for(var i=0; i<letters1.length; i++) {
 
-       
-         //var button = $('<div>').addClass('btn').html(letter[i]);
         $keyboard1.append('<div class="btn btn-outline-primary keys white" id="letter-div">'+letters1[i]+'</div>');
         
     }
+    //second row
     for(var i=0; i<letters2.length; i++) {
 
-       
-         //var button = $('<div>').addClass('btn').html(letter[i]);
         $keyboard2.append('<div class="btn btn-outline-primary keys white" id="letter-div">'+letters2[i]+'</div>');
         
     }
+    //third row
     for(var i=0; i<letters3.length; i++) {
 
-       
-         //var button = $('<div>').addClass('btn').html(letter[i]);
         $keyboard3.append('<div class="btn btn-outline-primary keys white" id="letter-div">'+letters3[i]+'</div>');
         
     }
@@ -94,10 +93,8 @@ $('.keys').on('click', function(event){
     
 }
 
-createPuzzle();
-createKeyboard();
-console.log(gameVariables.lettersInPlay);
-console.log(gameVariables.arrayOfSpaces);
+
+
 
 
 
