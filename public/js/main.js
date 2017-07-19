@@ -8,10 +8,12 @@ const gameVariables = {
     arrayOfSpaces: [],
     $wordDiv: $('#word-lines'),
     numberOfAttempts: 6,
+    numberOfEmptyBalls: 0,
     $attemptsDiv: $('#attempts'),
     $pokemonImg: $('#pokemon-pic'),
     $playAgain: $('<div class="btn btn-outline-danger white">Next Pokemon</div>'),
     $pokeballs: ('<img src="css/images/pokeball.png" class="pokeball-div">'),
+    $emptyballs: ('<img src="css/images/pokeball.png" class="pokeball-div hidden">'),
     win: 0,
     loss: 0,
 
@@ -154,9 +156,12 @@ function playGame(x) {
         $(event.currentTarget).addClass('btn-danger disabled');
         //number of attempts decrease by 1
         gameVariables.numberOfAttempts -= 1;
+        //number of empty pokeballs increase by 1
+        gameVariables.numberOfEmptyBalls += 1;
         //update pokeball
         erasePokeball();
         pokeballCounter();
+        emptyBall();
         //if user's attempts reach 0, user loses game.
         if (gameVariables.numberOfAttempts === 0) {
 
@@ -223,7 +228,14 @@ function playAgain(){
     //pokeball life counter
     function pokeballCounter() {
         for (var i=0; i<gameVariables.numberOfAttempts; i++) {
-               $('#pokeballs').append(gameVariables.$pokeballs)
+               $('#pokeballs').append(gameVariables.$pokeballs);
+        }
+    }
+
+    //add empty ball in place of pokeball after incorrect guess
+    function emptyBall() {
+        for (var i=0; i<gameVariables.numberOfEmptyBalls; i++) {
+                $('#pokeballs').append(gameVariables.$emptyballs);
         }
     }
     //erase pokeball div
